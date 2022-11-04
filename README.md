@@ -1,7 +1,6 @@
 # ArlinProject
+Aplikasi Ramah Listrik Indekos
 Capstone Project A_07
-
-## Aplikasi Ramah Listrik Indekos
 
 Aplikasi mobile berbasis android ini memiliki fitur :
 1. memantau daya setiap perangkat indekos
