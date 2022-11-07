@@ -94,13 +94,13 @@ public class activity_Monitor1 extends AppCompatActivity {
     }
 
     public String showText(String dataNow, String beban , String prop, DataSnapshot snapshot) {
-        String text = snapshot.child(dataNow).child(beban).child(prop).getValue(String.class) ;
+        String text = snapshot.child(beban).child(prop).getValue(String.class) ;
         return text;
     }
 
     public String showkWh(String dataNow, String beban , DataSnapshot snapshot) {
-        Long read_daya = snapshot.child(dataNow).child(beban).child("daya").getValue(Long.class) ;
-        Long read_jam = snapshot.child(dataNow).child(beban).child("time").getValue(Long.class) ;
+        Long read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(Long.class) ;
+        Long read_jam = snapshot.child(beban).child(dataNow).child("time").getValue(Long.class) ;
         float time = read_jam/ (float)3600;
         float kWh = read_daya/ (float)1000 * time;
         String text = toDecimalkWh(kWh, "#.####")+ " kWh";
@@ -108,8 +108,8 @@ public class activity_Monitor1 extends AppCompatActivity {
     }
 
     public Float hitungkWh(String dataNow, String beban , DataSnapshot snapshot) {
-        Long read_daya = snapshot.child(dataNow).child(beban).child("daya").getValue(Long.class) ;
-        Long read_jam = snapshot.child(dataNow).child(beban).child("time").getValue(Long.class) ;
+        Long read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(Long.class) ;
+        Long read_jam = snapshot.child(beban).child(dataNow).child("time").getValue(Long.class) ;
         float time = read_jam/ (float)3600;
         float kWh = read_daya / (float)1000 * time;
         return kWh;

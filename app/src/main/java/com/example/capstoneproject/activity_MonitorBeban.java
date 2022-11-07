@@ -55,11 +55,11 @@ public class activity_MonitorBeban extends AppCompatActivity {
 
                 String read_nama = snapshot.child(dataNow).child(bebanNow).child("nama").getValue(String.class) ;
                 textview_nama.setText(read_nama);
-                Long read_daya = snapshot.child(dataNow).child(bebanNow).child("daya").getValue(Long.class) ;
+                Long read_daya = snapshot.child(bebanNow).child(dataNow).child("daya").getValue(Long.class) ;
                 textview_daya.setText(read_daya.toString());
 
                 // Hitung Jam Aktif beban
-                Long read_jam = snapshot.child(dataNow).child(bebanNow).child("time").getValue(Long.class) ;
+                Long read_jam = snapshot.child(bebanNow).child(dataNow).child("time").getValue(Long.class) ;
                 float time = countJam(read_jam) ;
 
                 // read kWh
@@ -71,7 +71,7 @@ public class activity_MonitorBeban extends AppCompatActivity {
                 //textview_harga.setText(String.valueOf(hargaNow));
 
                 // switch
-                Boolean state = snapshot.child(dataNow).child(bebanNow).child("switch").getValue(Boolean.class) ;
+                Boolean state = snapshot.child(bebanNow).child("switch").getValue(Boolean.class) ;
                 switch_beban.setChecked(state);
                 switch_beban.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -79,12 +79,12 @@ public class activity_MonitorBeban extends AppCompatActivity {
                         if (switch_beban.isChecked()) {
                             // jika switch di on
                             Boolean state_ = Boolean.TRUE;
-                            data.child(dataNow).child(bebanNow).child("switch").setValue(state_);
+                            data.child(bebanNow).child("switch").setValue(state_);
                             switch_beban.setChecked((true));
                         } else {
                             // jika switch off
                             Boolean state_ = Boolean.FALSE;
-                            data.child(dataNow).child(bebanNow).child("switch").setValue(state_);
+                            data.child(bebanNow).child("switch").setValue(state_);
                             switch_beban.setChecked((false));
                         }
                     }
@@ -101,8 +101,8 @@ public class activity_MonitorBeban extends AppCompatActivity {
 
     // Fungsi readkWh
     public String readkWh(String dataNow, String beban , DataSnapshot snapshot) {
-        Long read_daya = snapshot.child(dataNow).child(beban).child("daya").getValue(Long.class) ;
-        Long read_jam = snapshot.child(dataNow).child(beban).child("time").getValue(Long.class) ;
+        Long read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(Long.class) ;
+        Long read_jam = snapshot.child(beban).child(dataNow).child("time").getValue(Long.class) ;
         float time = read_jam / (float)3600 ;
         float kWh = read_daya / (float)1000 * time;
         DecimalFormat df = new DecimalFormat("#.####");
@@ -133,13 +133,13 @@ public class activity_MonitorBeban extends AppCompatActivity {
 
     //Hitung biaya beban
     public String hitungBiaya (DatabaseReference data, DataSnapshot snapshot, String dataNow, String beban, float harga) {
-        Long read_daya = snapshot.child(dataNow).child(beban).child("daya").getValue(Long.class) ;
-        Long read_jam = snapshot.child(dataNow).child(beban).child("time").getValue(Long.class) ;
+        Long read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(Long.class) ;
+        Long read_jam = snapshot.child(beban).child(dataNow).child("time").getValue(Long.class) ;
         float time = countJam(read_jam) ;
         // Long harga
         float biaya = read_daya / (float)1000 * time * harga;
         String biaya_text = toRupiah(biaya) ;
-        data.child(dataNow).child(beban).child("biaya").setValue((long)biaya) ;
+        data.child(beban).child(dataNow).child("biaya").setValue((long)biaya) ;
         return biaya_text ;
     }
 

@@ -113,10 +113,10 @@ public class activity_Home extends AppCompatActivity{
                 textview_username.setText("@" + read_username);
 
                 // read dan show daya beban 1-4
-                Long read_daya1 = snapshot.child(dataNow).child("beban1").child("daya").getValue(Long.class) ;
-                Long read_daya2 = snapshot.child(dataNow).child("beban2").child("daya").getValue(Long.class) ;
-                Long read_daya3 = snapshot.child(dataNow).child("beban3").child("daya").getValue(Long.class) ;
-                Long read_daya4 = snapshot.child(dataNow).child("beban4").child("daya").getValue(Long.class) ;
+                Long read_daya1 = snapshot.child("beban1").child(dataNow).child("daya").getValue(Long.class) ;
+                Long read_daya2 = snapshot.child("beban2").child(dataNow).child("daya").getValue(Long.class) ;
+                Long read_daya3 = snapshot.child("beban3").child(dataNow).child("daya").getValue(Long.class) ;
+                Long read_daya4 = snapshot.child("beban4").child(dataNow).child("daya").getValue(Long.class) ;
                 Long read_totaldaya = read_daya1 + read_daya2 + read_daya3 + read_daya4 ; // sum daya 1-4
                 textview_daya1.setText(read_daya1.toString());
                 textview_daya2.setText(read_daya2.toString());
@@ -125,10 +125,10 @@ public class activity_Home extends AppCompatActivity{
                 textview_totaldaya.setText(read_totaldaya.toString());
 
                 // read dan show nama beban 1-4
-                String read_nama1 = snapshot.child(dataNow).child("beban1").child("nama").getValue(String.class) ;
-                String read_nama2 = snapshot.child(dataNow).child("beban2").child("nama").getValue(String.class) ;
-                String read_nama3 = snapshot.child(dataNow).child("beban3").child("nama").getValue(String.class) ;
-                String read_nama4 = snapshot.child(dataNow).child("beban4").child("nama").getValue(String.class) ;
+                String read_nama1 = snapshot.child("beban1").child("nama").getValue(String.class) ;
+                String read_nama2 = snapshot.child("beban2").child("nama").getValue(String.class) ;
+                String read_nama3 = snapshot.child("beban3").child("nama").getValue(String.class) ;
+                String read_nama4 = snapshot.child("beban4").child("nama").getValue(String.class) ;
                 textview_nama1.setText(read_nama1);
                 textview_nama2.setText(read_nama2);
                 textview_nama3.setText(read_nama3);
@@ -158,10 +158,10 @@ public class activity_Home extends AppCompatActivity{
                 });
 
                 // read dan show state beban 1-4
-                Boolean state1 = snapshot.child(dataNow).child("beban1").child("switch").getValue(Boolean.class) ;
-                Boolean state2 = snapshot.child(dataNow).child("beban2").child("switch").getValue(Boolean.class) ;
-                Boolean state3 = snapshot.child(dataNow).child("beban3").child("switch").getValue(Boolean.class) ;
-                Boolean state4 = snapshot.child(dataNow).child("beban4").child("switch").getValue(Boolean.class) ;
+                Boolean state1 = snapshot.child("beban1").child("switch").getValue(Boolean.class) ;
+                Boolean state2 = snapshot.child("beban2").child("switch").getValue(Boolean.class) ;
+                Boolean state3 = snapshot.child("beban3").child("switch").getValue(Boolean.class) ;
+                Boolean state4 = snapshot.child("beban4").child("switch").getValue(Boolean.class) ;
                 switch1.setChecked(state1);
                 switch2.setChecked(state2);
                 switch3.setChecked(state3);
@@ -174,12 +174,12 @@ public class activity_Home extends AppCompatActivity{
                         if (switch1.isChecked()) {
                             // jika switch di on
                             Boolean state_ = Boolean.TRUE;
-                            data.child(dataNow).child("beban1").child("switch").setValue(state_);
+                            data.child("beban1").child("switch").setValue(state_);
                             switch1.setChecked((true));
                         } else {
                             // jika switch off
                             Boolean state_ = Boolean.FALSE;
-                            data.child(dataNow).child("beban1").child("switch").setValue(state_);
+                            data.child("beban1").child("switch").setValue(state_);
                             switch1.setChecked((false));
                         }
                     }
@@ -191,12 +191,12 @@ public class activity_Home extends AppCompatActivity{
                         if (switch2.isChecked()) {
                             // jika switch di on
                             Boolean state_ = Boolean.TRUE;
-                            data.child(dataNow).child("beban2").child("switch").setValue(state_);
+                            data.child("beban2").child("switch").setValue(state_);
                             switch2.setChecked((true));
                         } else {
                             // jika switch off
                             Boolean state_ = Boolean.FALSE;
-                            data.child(dataNow).child("beban2").child("switch").setValue(state_);
+                            data.child("beban2").child("switch").setValue(state_);
                             switch2.setChecked((false));
                         }
                     }
@@ -208,12 +208,12 @@ public class activity_Home extends AppCompatActivity{
                         if (switch3.isChecked()) {
                             // jika switch di on
                             Boolean state_ = Boolean.TRUE;
-                            data.child(dataNow).child("beban3").child("switch").setValue(state_);
+                            data.child("beban3").child("switch").setValue(state_);
                             switch3.setChecked((true));
                         } else {
                             // jika switch off
                             Boolean state_ = Boolean.FALSE;
-                            data.child(dataNow).child("beban3").child("switch").setValue(state_);
+                            data.child("beban3").child("switch").setValue(state_);
                             switch3.setChecked((false));
                         }
                     }
@@ -225,12 +225,12 @@ public class activity_Home extends AppCompatActivity{
                         if (switch4.isChecked()) {
                             // jika switch di on
                             Boolean state_ = Boolean.TRUE;
-                            data.child(dataNow).child("beban4").child("switch").setValue(state_);
+                            data.child("beban4").child("switch").setValue(state_);
                             switch4.setChecked((true));
                         } else {
                             // jika switch off
                             Boolean state_ = Boolean.FALSE;
-                            data.child(dataNow).child("beban4").child("switch").setValue(state_);
+                            data.child("beban4").child("switch").setValue(state_);
                             switch4.setChecked((false));
                         }
                     }
