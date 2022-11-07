@@ -95,9 +95,11 @@ public class activity_Login extends AppCompatActivity {
                         textinput_username.setErrorEnabled(false);
 
                         String usernameFromDB = snapshot.child(userEnteredUsername).child("username").getValue(String.class);
+                        String lokasiFromDB = snapshot.child(userEnteredUsername).child("location").getValue(String.class);
 
                         Intent intent = new Intent(getApplicationContext(), activity_Home.class);
                         intent.putExtra("userNow",usernameFromDB) ;
+                        intent.putExtra("lokasiNow",lokasiFromDB) ;
 
                         startActivity(intent);
                     } else {

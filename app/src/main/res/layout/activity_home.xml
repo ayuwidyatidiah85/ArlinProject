@@ -7,14 +7,16 @@
     tools:context=".activity_Home">
 
     <View
-        android:id="@+id/view"
+        android:id="@+id/view_home"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/home_bg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textview_nama1"
@@ -23,55 +25,69 @@
         android:text="Perangkat 1"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.531" />
+
+    <TextView
+        android:id="@+id/textview_username"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Halo"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.185" />
 
     <Switch
         android:id="@+id/switch4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.832" />
 
     <Switch
         android:id="@+id/switch3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.732" />
 
     <Switch
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.63" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.535" />
 
     <TextView
@@ -81,11 +97,11 @@
         android:text="Watt"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.425" />
 
     <TextView
@@ -95,11 +111,11 @@
         android:text="0"
         android:textSize="60sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.341" />
 
     <TextView
@@ -109,11 +125,11 @@
         android:text="0"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.574"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.826" />
 
     <TextView
@@ -123,11 +139,11 @@
         android:text="Perangkat 4"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.825" />
 
     <TextView
@@ -137,11 +153,11 @@
         android:text="0"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.574"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.727" />
 
     <TextView
@@ -151,11 +167,11 @@
         android:text="Perangkat 3"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.727" />
 
     <TextView
@@ -165,11 +181,11 @@
         android:text="Perangkat 2"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.144"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.626" />
 
     <TextView
@@ -179,11 +195,11 @@
         android:text="0"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.574"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.626" />
 
     <TextView
@@ -193,11 +209,37 @@
         android:text="0"
         android:textSize="16sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view"
-        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.574"
-        app:layout_constraintStart_toStartOf="@+id/view"
-        app:layout_constraintTop_toTopOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.531" />
+
+    <TextView
+        android:id="@+id/textview_namauser"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Halo Budi Setiawan"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.75"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.150" />
+
+    <Button
+        android:id="@+id/button_monitor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Monitor"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
