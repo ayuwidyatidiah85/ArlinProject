@@ -9,7 +9,7 @@ Aplikasi mobile berbasis android ini memiliki fitur :
 4. menghitung penghematan listrik di indekos
 
 Aplikasi ini dapat berjalan dengan integrasi komponen hardware dan software
-- Hardware : rangkaian hardware dengan ESP8266
+- Hardware : rangkaian hardware dengan ESP8266, kode dapat diakses di https://github.com/AidaSuswantoUGM/capstonea07
 - Software : aplikasi ARLIN dapat diunduh di ...
 
 ### Software
