@@ -6,4 +6,126 @@
     android:layout_height="match_parent"
     tools:context=".activity_Akun">
 
+    <View
+        android:id="@+id/view_akun"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_username"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.317">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Username"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_namauser"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.22">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Nama Pengguna"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_password"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.419">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Password"
+            android:inputType="textPassword" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_lokasi"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.524">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Lokasi"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/textinput_golongan"
+        style="@style/Widget.Design.TextInputLayout"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.487"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.625">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Golongan Daya Listrik"
+            android:inputType="text" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save Profile"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.750" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

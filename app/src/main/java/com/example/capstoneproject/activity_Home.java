@@ -2,6 +2,7 @@ package com.example.capstoneproject;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Switch;
@@ -10,6 +11,8 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -19,12 +22,14 @@ import com.google.firebase.database.ValueEventListener;
 
 public class activity_Home extends AppCompatActivity{
 
+    // Bottom Navigation
+    private BottomNavigationView bottomNavigationView ;
+
     // inisialisasi komponen xml
     private TextView textview_namauser, textview_username ;
     private TextView textview_daya1, textview_daya2, textview_daya3, textview_daya4, textview_totaldaya;
     private TextView textview_nama1, textview_nama2, textview_nama3, textview_nama4 ;
     private Switch switch1, switch2, switch3, switch4 ;
-    private Button button_monitor ;
     public String dataNow;
 
     @Override
@@ -32,15 +37,16 @@ public class activity_Home extends AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        // intent ambil data yg dibutuhkan dari activity lain : username, location
-        Intent intent = getIntent();
-        String userNow = intent.getStringExtra("userNow");
-        String lokasiNow = intent.getStringExtra("lokasiNow") ;
+        // home ambil data yg dibutuhkan dari activity lain : username, location
+        Intent home = getIntent();
+        String userNow = home.getStringExtra("userNow");
+        String lokasiNow = home.getStringExtra("lokasiNow") ;
+        String golonganNow = home.getStringExtra("golonganNow") ;
 
-        // deklarasi intent yang dipakai
+        // deklarasi intent tujuan yang dipakai
         Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
-        Intent monitor = new Intent(getApplicationContext(), activity_Monitor1.class);
-        //Intent monitor2 = new Intent(getApplicationContext(), activity_Monitor2.class);
+        Intent monitor1 = new Intent(getApplicationContext(), activity_Monitor1.class);
+        Intent monitor2 = new Intent(getApplicationContext(), activity_Monitor2.class);
         Intent akun = new Intent(getApplicationContext(), activity_Akun.class) ;
 
         // realtime baca data root : user
@@ -49,7 +55,7 @@ public class activity_Home extends AppCompatActivity{
         checkLoc.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
-                Long harga = snapshot.child(lokasiNow).child("harga").getValue(Long.class);
+                Long harga = snapshot.child(lokasiNow).child("golongan").child(golonganNow).child("harga").getValue(Long.class);
                 float hargaNow = (float) harga ;
                 Long ppj = snapshot.child(lokasiNow).child("PPJ").getValue(Long.class);
                 float ppjNow = (float) ppj ;
@@ -59,10 +65,15 @@ public class activity_Home extends AppCompatActivity{
                 // Intent utk acitivity MonitorBeban
                 monitorBeban.putExtra("hargaNow", hargaNow) ;
 
-                // Intent utk acitivity Monitor
-                monitor.putExtra("hargaNow", hargaNow) ;
-                monitor.putExtra("ppjNow", ppjNow) ;
-                monitor.putExtra("ppnNow", ppnNow) ;
+                // Intent utk acitivity Monitor1
+                monitor1.putExtra("hargaNow", hargaNow) ;
+                monitor1.putExtra("ppjNow", ppjNow) ;
+                monitor1.putExtra("ppnNow", ppnNow) ;
+
+                // Intent utk acitivity Monitor1
+                monitor2.putExtra("hargaNow", hargaNow) ;
+                monitor2.putExtra("ppjNow", ppjNow) ;
+                monitor2.putExtra("ppnNow", ppnNow) ;
             }
             @Override
             public void onCancelled(@NonNull DatabaseError error) { }
@@ -94,7 +105,6 @@ public class activity_Home extends AppCompatActivity{
                 switch3 = findViewById(R.id.switch3) ;
                 switch4 = findViewById(R.id.switch4) ;
 
-                button_monitor = findViewById((R.id.button_monitor)) ;
 
                 // read dan get data adaorang
                 Boolean adaorang = snapshot.child("adaorang").getValue(Boolean.class) ;
@@ -236,20 +246,6 @@ public class activity_Home extends AppCompatActivity{
                     }
                 });
 
-
-
-                button_monitor.setOnClickListener(new View.OnClickListener() {
-                    @Override
-                    public void onClick(View view) {
-                        String bebanNow = "beban1" ;
-                        //Intent monitor = new Intent(getApplicationContext(), activity_Monitor.class);
-                        monitor.putExtra("userNow", userNow) ;
-                        monitor.putExtra("dataNow", dataNow) ;
-                        monitor.putExtra("lokasiNow", lokasiNow) ;
-                        startActivity(monitor);
-                    }
-                });
-
             }
 
             @Override
@@ -257,6 +253,41 @@ public class activity_Home extends AppCompatActivity{
 
             }
         }) ;
+
+        // navigation
+        bottomNavigationView = findViewById(R.id.navbar) ;
+        bottomNavigationView.setSelectedItemId(R.id.navigation_Home);
+        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                switch (item.getItemId()) {
+                    case R.id.navigation_Home:
+                        return true ;
+                    case R.id.navigation_Monitor1:
+                        // intent
+                        String dataNow = "data1" ;
+                        monitor1.putExtra("userNow", userNow) ;
+                        monitor1.putExtra("dataNow", dataNow) ;
+                        monitor1.putExtra("lokasiNow", lokasiNow) ;
+                        monitor1.putExtra("golonganNow", golonganNow) ;
+                        startActivity(monitor1);
+                        overridePendingTransition(0,0);
+                        return true ;
+                    case R.id.navigation_Monitor2:
+                        // intent
+                        dataNow = "data2" ;
+                        monitor2.putExtra("userNow", userNow) ;
+                        monitor2.putExtra("dataNow", dataNow) ;
+                        monitor2.putExtra("lokasiNow", lokasiNow) ;
+                        monitor2.putExtra("golonganNow", golonganNow) ;
+                        startActivity(monitor2);
+                        overridePendingTransition(0,0);
+                        return true ;
+
+                }
+                return false;
+            }
+        });
 
     }
 

@@ -6,6 +6,17 @@
     android:layout_height="match_parent"
     tools:context=".activity_Home">
 
+    <!-- Bottom Navigation -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/navbar"
+        app:itemBackground="@color/design_default_color_primary"
+        app:itemTextColor="@drawable/selector"
+        app:itemIconTint="@drawable/selector"
+        app:menu="@menu/navigation_bottom"
+        app:layout_constraintBottom_toBottomOf="@id/view_home"/>
+
     <View
         android:id="@+id/view_home"
         android:layout_width="wrap_content"
@@ -50,6 +61,8 @@
         android:id="@+id/switch4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_home"
         app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
@@ -61,6 +74,8 @@
         android:id="@+id/switch3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_home"
         app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
@@ -72,6 +87,8 @@
         android:id="@+id/switch2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_home"
         app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
@@ -83,6 +100,8 @@
         android:id="@+id/switch1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minWidth="48dp"
+        android:minHeight="48dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_home"
         app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintHorizontal_bias="0.857"
@@ -230,16 +249,5 @@
         app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.150" />
 
-    <Button
-        android:id="@+id/button_monitor"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Monitor"
-        app:layout_constraintBottom_toBottomOf="@+id/view_home"
-        app:layout_constraintEnd_toEndOf="@+id/view_home"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/view_home"
-        app:layout_constraintTop_toTopOf="@+id/view_home"
-        app:layout_constraintVertical_bias="1.0" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

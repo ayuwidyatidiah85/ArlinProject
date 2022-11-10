@@ -33,7 +33,6 @@ public class activity_Login extends AppCompatActivity {
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                //isUser();
                 //Validate login info
                 if(!validateUsername() | !validatePassword()) {
                     return ;
@@ -96,12 +95,14 @@ public class activity_Login extends AppCompatActivity {
 
                         String usernameFromDB = snapshot.child(userEnteredUsername).child("username").getValue(String.class);
                         String lokasiFromDB = snapshot.child(userEnteredUsername).child("location").getValue(String.class);
+                        String golonganFromDB = snapshot.child(userEnteredUsername).child("golongan").getValue(String.class);
 
-                        Intent intent = new Intent(getApplicationContext(), activity_Home.class);
-                        intent.putExtra("userNow",usernameFromDB) ;
-                        intent.putExtra("lokasiNow",lokasiFromDB) ;
+                        Intent home = new Intent(getApplicationContext(), activity_Home.class);
+                        home.putExtra("userNow",usernameFromDB) ;
+                        home.putExtra("lokasiNow",lokasiFromDB) ;
+                        home.putExtra("golonganNow",golonganFromDB) ;
 
-                        startActivity(intent);
+                        startActivity(home);
                     } else {
                         textinput_password.setError("Wrong Password");
                         textinput_password.requestFocus();

@@ -1,12 +1,12 @@
 package com.example.capstoneproject;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.TextView;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
@@ -21,7 +21,7 @@ import java.text.NumberFormat;
 import java.util.Currency;
 import java.util.Locale;
 
-public class activity_Monitor1 extends AppCompatActivity {
+public class activity_Monitor2 extends AppCompatActivity {
 
     // Bottom Navigation
     private BottomNavigationView bottomNavigationView ;
@@ -39,14 +39,14 @@ public class activity_Monitor1 extends AppCompatActivity {
         setContentView(R.layout.activity_monitor);
 
         // intent ambil data yg dibutuhkan dari activity lain : usename
-        Intent monitor1 = getIntent();
-        String userNow = monitor1.getStringExtra("userNow");
-        String dataNow = monitor1.getStringExtra("dataNow") ;
-        String lokasiNow = monitor1.getStringExtra("lokasiNow") ;
-        String golonganNow = monitor1.getStringExtra("golonganNow") ;
-        float hargaNow = monitor1.getFloatExtra("hargaNow", 0L);
-        float ppnNow = monitor1.getFloatExtra("ppnNow", 0L);
-        float ppjNow = monitor1.getFloatExtra("ppjNow", 0L);
+        Intent monitor2 = getIntent();
+        String userNow = monitor2.getStringExtra("userNow");
+        String dataNow = monitor2.getStringExtra("dataNow") ;
+        String lokasiNow = monitor2.getStringExtra("lokasiNow") ;
+        String golonganNow = monitor2.getStringExtra("golonganNow") ;
+        float hargaNow = monitor2.getFloatExtra("hargaNow", 0L);
+        float ppnNow = monitor2.getFloatExtra("ppnNow", 0L);
+        float ppjNow = monitor2.getFloatExtra("ppjNow", 0L);
 
         // realtime baca data root : user
         DatabaseReference data = FirebaseDatabase.getInstance().getReference("users").child(userNow) ;
@@ -108,7 +108,7 @@ public class activity_Monitor1 extends AppCompatActivity {
 
         // navigation
         bottomNavigationView = findViewById(R.id.navbar) ;
-        bottomNavigationView.setSelectedItemId(R.id.navigation_Monitor1);
+        bottomNavigationView.setSelectedItemId(R.id.navigation_Monitor2);
         bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
@@ -124,20 +124,20 @@ public class activity_Monitor1 extends AppCompatActivity {
                         overridePendingTransition(0,0);
                         return true ;
                     case R.id.navigation_Monitor1:
+                        // intent
+                        String dataNow = "data1" ;
+                        Intent monitor1_bar = new Intent(getApplicationContext(), activity_Monitor1.class);
+                        monitor1_bar.putExtra("hargaNow", hargaNow) ;
+                        monitor1_bar.putExtra("ppjNow", ppjNow) ;
+                        monitor1_bar.putExtra("ppnNow", ppnNow) ;
+                        monitor1_bar.putExtra("userNow", userNow) ;
+                        monitor1_bar.putExtra("dataNow", dataNow) ;
+                        monitor1_bar.putExtra("lokasiNow", lokasiNow) ;
+                        monitor1_bar.putExtra("golonganNow", golonganNow) ;
+                        startActivity(monitor1_bar);
+                        overridePendingTransition(0,0);
                         return true ;
                     case R.id.navigation_Monitor2:
-                        // intent
-                        String dataNow = "data2" ;
-                        Intent monitor2_bar = new Intent(getApplicationContext(), activity_Monitor2.class);
-                        monitor2_bar.putExtra("hargaNow", hargaNow) ;
-                        monitor2_bar.putExtra("ppjNow", ppjNow) ;
-                        monitor2_bar.putExtra("ppnNow", ppnNow) ;
-                        monitor2_bar.putExtra("userNow", userNow) ;
-                        monitor2_bar.putExtra("dataNow", dataNow) ;
-                        monitor2_bar.putExtra("lokasiNow", lokasiNow) ;
-                        monitor2_bar.putExtra("golonganNow", golonganNow) ;
-                        startActivity(monitor2_bar);
-                        overridePendingTransition(0,0);
                         return true ;
 
                 }
