@@ -92,6 +92,8 @@ public class activity_Monitor1 extends AppCompatActivity {
                 textview_harga.setText(toRupiah(hargaNow));
                 textview_ppn.setText(toRupiah(ppnNow));
                 textview_ppj.setText(String.valueOf(ppjNow) + "%");
+
+                // Hitung total biaya
                 float biaya_bersih = total_kWh * hargaNow ;
                 float ppjRupiah = ppjNow * biaya_bersih ;
                 float biaya_kotor = biaya_bersih + ppjRupiah ;

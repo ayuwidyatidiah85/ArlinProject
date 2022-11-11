@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -25,6 +27,7 @@ public class activity_MonitorBeban extends AppCompatActivity {
 
     private TextView textview_nama, textview_daya, textview_jam, textview_biaya, textview_harga, textview_kwh ;
     private Switch switch_beban ;
+    private ImageButton btn_back ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,6 +41,7 @@ public class activity_MonitorBeban extends AppCompatActivity {
         textview_harga = findViewById(R.id.textview_harga) ;
         textview_kwh = findViewById(R.id.textview_kwh) ;
         switch_beban = findViewById((R.id.switch_beban)) ;
+        btn_back = findViewById(R.id.btn_back) ;
 
         // intent ambil data yg dibutuhkan dari activity lain : userNow, bebanNow
         Intent monitorBeban = getIntent();
@@ -45,6 +49,7 @@ public class activity_MonitorBeban extends AppCompatActivity {
         String userNow = monitorBeban.getStringExtra("userNow");
         String dataNow = monitorBeban.getStringExtra("dataNow");
         String lokasiNow = monitorBeban.getStringExtra("lokasiNow");
+        String golonganNow = monitorBeban.getStringExtra("golonganNow");
         float hargaNow = monitorBeban.getFloatExtra("hargaNow", 0L);
 
         // realtime baca data root : user
@@ -87,6 +92,19 @@ public class activity_MonitorBeban extends AppCompatActivity {
                             data.child(bebanNow).child("switch").setValue(state_);
                             switch_beban.setChecked((false));
                         }
+                    }
+                });
+
+                // button back
+                btn_back.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        Intent home_bar = new Intent(getApplicationContext(), activity_Home.class);
+                        home_bar.putExtra("userNow",userNow) ;
+                        home_bar.putExtra("lokasiNow",lokasiNow) ;
+                        home_bar.putExtra("golonganNow",golonganNow) ;
+                        startActivity(home_bar);
+                        overridePendingTransition(0,0);
                     }
                 });
             }

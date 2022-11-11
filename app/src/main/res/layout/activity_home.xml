@@ -30,6 +30,34 @@
         app:layout_constraintVertical_bias="0.0" />
 
     <TextView
+        android:id="@+id/textview_orang"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:text="IN"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.62"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.435" />
+
+    <TextView
+        android:id="@+id/textview_nama5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.458"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.435" />
+
+    <TextView
         android:id="@+id/textview_nama1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -110,20 +138,6 @@
         app:layout_constraintVertical_bias="0.535" />
 
     <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Watt"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view_home"
-        app:layout_constraintEnd_toEndOf="@+id/view_home"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="@+id/view_home"
-        app:layout_constraintTop_toTopOf="@+id/view_home"
-        app:layout_constraintVertical_bias="0.425" />
-
-    <TextView
         android:id="@+id/textview_totaldaya"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -132,10 +146,22 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view_home"
         app:layout_constraintEnd_toEndOf="@+id/view_home"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/view_home"
         app:layout_constraintTop_toTopOf="@+id/view_home"
-        app:layout_constraintVertical_bias="0.341" />
+        app:layout_constraintVertical_bias="0.288" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Watt"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.376" />
 
     <TextView
         android:id="@+id/textview_daya4"

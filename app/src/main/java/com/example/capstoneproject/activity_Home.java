@@ -26,10 +26,10 @@ public class activity_Home extends AppCompatActivity{
     private BottomNavigationView bottomNavigationView ;
 
     // inisialisasi komponen xml
-    private TextView textview_namauser, textview_username ;
+    private TextView textview_namauser, textview_username , textview_orang;
     private TextView textview_daya1, textview_daya2, textview_daya3, textview_daya4, textview_totaldaya;
     private TextView textview_nama1, textview_nama2, textview_nama3, textview_nama4 ;
-    private Switch switch1, switch2, switch3, switch4 ;
+    private Switch switch1, switch2, switch3, switch4;
     public String dataNow;
 
     @Override
@@ -104,17 +104,20 @@ public class activity_Home extends AppCompatActivity{
                 switch2 = findViewById(R.id.switch2) ;
                 switch3 = findViewById(R.id.switch3) ;
                 switch4 = findViewById(R.id.switch4) ;
+                textview_orang = findViewById(R.id.textview_orang) ;
 
 
                 // read dan get data adaorang
                 Boolean adaorang = snapshot.child("adaorang").getValue(Boolean.class) ;
                 if (adaorang == true) {
-                    // data dimasukkan sebagai "Penggunaan"
                     dataNow = "data1" ;
-                } else if (adaorang == false) {
-                    // data dimasukkan sebagai "Pemborosan"
-                    dataNow = "data2" ;
+                    textview_orang.setText("IN");
                 }
+                else if (adaorang == false) {
+                    dataNow = "data2" ;
+                    textview_orang.setText("OUT");
+                }
+
 
                 // read dan show namauser dan username
                 String read_namauser = snapshot.child("nama").getValue(String.class) ;
@@ -163,6 +166,8 @@ public class activity_Home extends AppCompatActivity{
                         monitorBeban.putExtra("bebanNow",bebanNow) ;
                         monitorBeban.putExtra("userNow", userNow);
                         monitorBeban.putExtra("dataNow", dataNow) ;
+                        monitorBeban.putExtra("golonganNow", golonganNow) ;
+                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
                         startActivity(monitorBeban);
                     }
                 });

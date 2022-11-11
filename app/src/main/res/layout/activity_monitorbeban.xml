@@ -177,5 +177,16 @@
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
         app:layout_constraintTop_toTopOf="@+id/view_monitor" />
 
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/view_monitor"
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.03"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

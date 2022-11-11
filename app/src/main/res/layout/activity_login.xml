@@ -20,6 +20,7 @@
         style="@style/Widget.Design.TextInputLayout"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
+        android:outlineProvider="bounds"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
         app:layout_constraintHorizontal_bias="0.500"

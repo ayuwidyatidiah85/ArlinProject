@@ -15,27 +15,23 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        android:padding="20dp"/>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinput_username"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="370dp"
+
+    <TextView
+        android:id="@+id/textview_namauser"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:text="Budi Setiawan"
+        android:textSize="24sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view_akun"
         app:layout_constraintEnd_toEndOf="@+id/view_akun"
-        app:layout_constraintHorizontal_bias="0.500"
         app:layout_constraintStart_toStartOf="@+id/view_akun"
         app:layout_constraintTop_toTopOf="@+id/view_akun"
-        app:layout_constraintVertical_bias="0.317">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
+        app:layout_constraintVertical_bias="0.260
+" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinput_namauser"
@@ -44,10 +40,10 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/view_akun"
         app:layout_constraintEnd_toEndOf="@+id/view_akun"
-        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/view_akun"
         app:layout_constraintTop_toTopOf="@+id/view_akun"
-        app:layout_constraintVertical_bias="0.22">
+        app:layout_constraintVertical_bias="0.373">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -64,22 +60,41 @@
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/view_akun"
         app:layout_constraintEnd_toEndOf="@+id/view_akun"
-        app:layout_constraintHorizontal_bias="0.50"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/view_akun"
         app:layout_constraintTop_toTopOf="@+id/view_akun"
-        app:layout_constraintVertical_bias="0.419">
+        app:layout_constraintVertical_bias="0.469">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            android:inputType="textPassword" />
+            android:inputType="text" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinput_lokasi"
-        style="@style/Widget.Design.TextInputLayout"
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
+        android:layout_width="370dp"
+        android:layout_height="wrap_content"
+        android:hint="Lokasi"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.565">
+
+        <AutoCompleteTextView
+            android:id="@+id/auto_lokasi"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="none"/>
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox.Dense.ExposedDropdownMenu"
         android:layout_width="370dp"
         android:layout_height="wrap_content"
         app:layout_constraintBottom_toBottomOf="@+id/view_akun"
@@ -87,45 +102,51 @@
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/view_akun"
         app:layout_constraintTop_toTopOf="@+id/view_akun"
-        app:layout_constraintVertical_bias="0.524">
+        app:layout_constraintVertical_bias="0.666">
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Lokasi"
-            android:inputType="text" />
-
-    </com.google.android.material.textfield.TextInputLayout>
-
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/textinput_golongan"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="370dp"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
-        app:layout_constraintEnd_toEndOf="@+id/view_akun"
-        app:layout_constraintHorizontal_bias="0.487"
-        app:layout_constraintStart_toStartOf="@+id/view_akun"
-        app:layout_constraintTop_toTopOf="@+id/view_akun"
-        app:layout_constraintVertical_bias="0.625">
-
-        <com.google.android.material.textfield.TextInputEditText
+        <AutoCompleteTextView
+            android:id="@+id/auto_golongan"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Golongan Daya Listrik"
-            android:inputType="text" />
+            android:inputType="none" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
-        android:id="@+id/btn_login"
+        android:id="@+id/btn_save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Save Profile"
+        android:text="Update Profile"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.808" />
+
+    <TextView
+        android:id="@+id/textview_username"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="budi"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="@+id/view_akun"
         app:layout_constraintEnd_toEndOf="@+id/view_akun"
         app:layout_constraintStart_toStartOf="@+id/view_akun"
         app:layout_constraintTop_toTopOf="@+id/view_akun"
-        app:layout_constraintVertical_bias="0.750" />
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageButton
+        android:id="@+id/btn_back"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.03"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
