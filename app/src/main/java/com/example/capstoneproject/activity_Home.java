@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 
@@ -30,6 +31,7 @@ public class activity_Home extends AppCompatActivity{
     private TextView textview_daya1, textview_daya2, textview_daya3, textview_daya4, textview_totaldaya;
     private TextView textview_nama1, textview_nama2, textview_nama3, textview_nama4 ;
     private Switch switch1, switch2, switch3, switch4;
+    private ImageView image_akun ;
     public String dataNow;
 
     @Override
@@ -88,6 +90,7 @@ public class activity_Home extends AppCompatActivity{
                 // baca komponen daya, nama, dan switch beban 1-4 (textview)
                 textview_namauser = findViewById(R.id.textview_namauser) ;
                 textview_username = findViewById(R.id.textview_username) ;
+                image_akun = findViewById(R.id.image_akun) ;
 
                 textview_daya1 = findViewById(R.id.textview_daya1) ;
                 textview_daya2 = findViewById(R.id.textview_daya2) ;
@@ -131,10 +134,10 @@ public class activity_Home extends AppCompatActivity{
                 Long read_daya3 = snapshot.child("beban3").child(dataNow).child("daya").getValue(Long.class) ;
                 Long read_daya4 = snapshot.child("beban4").child(dataNow).child("daya").getValue(Long.class) ;
                 Long read_totaldaya = read_daya1 + read_daya2 + read_daya3 + read_daya4 ; // sum daya 1-4
-                textview_daya1.setText(read_daya1.toString());
-                textview_daya2.setText(read_daya2.toString());
-                textview_daya3.setText(read_daya3.toString());
-                textview_daya4.setText(read_daya4.toString());
+                textview_daya1.setText(read_daya1.toString() + " Watt");
+                textview_daya2.setText(read_daya2.toString() + " Watt");
+                textview_daya3.setText(read_daya3.toString() + " Watt");
+                textview_daya4.setText(read_daya4.toString() + " Watt");
                 textview_totaldaya.setText(read_totaldaya.toString());
 
                 // read dan show nama beban 1-4
@@ -147,7 +150,7 @@ public class activity_Home extends AppCompatActivity{
                 textview_nama3.setText(read_nama3);
                 textview_nama4.setText(read_nama4);
 
-                textview_namauser.setOnClickListener(new View.OnClickListener() {
+                image_akun.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String golonganNow = snapshot.child("golongan").getValue(String.class) ;
@@ -158,10 +161,50 @@ public class activity_Home extends AppCompatActivity{
                     }
                 });
 
+                // open activity monitorBeban 1-4
                 textview_nama1.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String bebanNow = "beban1" ;
+                        //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
+                        monitorBeban.putExtra("bebanNow",bebanNow) ;
+                        monitorBeban.putExtra("userNow", userNow);
+                        monitorBeban.putExtra("dataNow", dataNow) ;
+                        monitorBeban.putExtra("golonganNow", golonganNow) ;
+                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
+                        startActivity(monitorBeban);
+                    }
+                });
+                textview_nama2.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String bebanNow = "beban2" ;
+                        //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
+                        monitorBeban.putExtra("bebanNow",bebanNow) ;
+                        monitorBeban.putExtra("userNow", userNow);
+                        monitorBeban.putExtra("dataNow", dataNow) ;
+                        monitorBeban.putExtra("golonganNow", golonganNow) ;
+                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
+                        startActivity(monitorBeban);
+                    }
+                });
+                textview_nama3.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String bebanNow = "beban3" ;
+                        //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
+                        monitorBeban.putExtra("bebanNow",bebanNow) ;
+                        monitorBeban.putExtra("userNow", userNow);
+                        monitorBeban.putExtra("dataNow", dataNow) ;
+                        monitorBeban.putExtra("golonganNow", golonganNow) ;
+                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
+                        startActivity(monitorBeban);
+                    }
+                });
+                textview_nama4.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        String bebanNow = "beban4" ;
                         //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
                         monitorBeban.putExtra("bebanNow",bebanNow) ;
                         monitorBeban.putExtra("userNow", userNow);

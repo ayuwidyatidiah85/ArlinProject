@@ -27,7 +27,7 @@ public class activity_Monitor2 extends AppCompatActivity {
     private BottomNavigationView bottomNavigationView ;
 
     // component xml
-    private TextView textview_totaldaya ;
+    private TextView textview_totaldaya, textview_biaya2;
     private TextView textview_nama1, textview_nama2, textview_nama3, textview_nama4 ;
     private TextView textview_kWh1, textview_kWh2, textview_kWh3, textview_kWh4, textview_totalkWh ;
     private TextView textview_lokasi, textview_golongan ;
@@ -36,7 +36,7 @@ public class activity_Monitor2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_monitor);
+        setContentView(R.layout.activity_monitor2);
 
         // intent ambil data yg dibutuhkan dari activity lain : usename
         Intent monitor2 = getIntent();
@@ -55,6 +55,7 @@ public class activity_Monitor2 extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
                 textview_totaldaya = findViewById(R.id.textview_totaldaya) ;
+                textview_biaya2 = findViewById(R.id.textview_biaya2) ;
                 textview_kWh1 = findViewById(R.id.textview_kwh1) ;
                 textview_kWh2 = findViewById(R.id.textview_kwh2) ;
                 textview_kWh3 = findViewById(R.id.textview_kwh3) ;
@@ -97,6 +98,7 @@ public class activity_Monitor2 extends AppCompatActivity {
                 float biaya_kotor = biaya_bersih + ppjRupiah ;
                 textview_ppjrupiah.setText(toRupiah(ppjRupiah));
                 textview_biaya.setText(toRupiah(biaya_kotor));
+                textview_biaya2.setText(toRupiah(biaya_kotor));
 
             }
 

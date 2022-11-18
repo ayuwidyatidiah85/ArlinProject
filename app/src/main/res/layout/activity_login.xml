@@ -10,22 +10,32 @@
         android:id="@+id/view_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinput_username"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="370dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:outlineProvider="bounds"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeErrorColor="@color/yellow"
+        app:errorIconTint="@color/yellow"
+        app:errorTextColor="@color/yellow"
+        app:helperTextTextColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
-        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintHorizontal_bias="0.512"
         app:layout_constraintStart_toStartOf="@+id/view_login"
-        app:layout_constraintTop_toTopOf="@+id/view_login">
+        app:layout_constraintTop_toTopOf="@+id/view_login"
+        app:layout_constraintVertical_bias="0.601">
+
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -37,15 +47,20 @@
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/textinput_password"
-        style="@style/Widget.Design.TextInputLayout"
-        android:layout_width="370dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="300dp"
         android:layout_height="wrap_content"
+        app:boxBackgroundColor="@color/white"
+        app:boxStrokeErrorColor="@color/yellow"
+        app:errorIconTint="@color/yellow"
+        app:errorTextColor="@color/yellow"
+        app:helperTextTextColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
-        app:layout_constraintHorizontal_bias="0.500"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="@+id/view_login"
         app:layout_constraintTop_toTopOf="@+id/view_login"
-        app:layout_constraintVertical_bias="0.600">
+        app:layout_constraintVertical_bias="0.729">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
@@ -59,11 +74,45 @@
         android:id="@+id/btn_login"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Login"
+        android:backgroundTint="@color/yellow"
+        android:text="Log In"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
+        app:layout_constraintHorizontal_bias="0.832"
         app:layout_constraintStart_toStartOf="@+id/view_login"
         app:layout_constraintTop_toTopOf="@+id/view_login"
-        app:layout_constraintVertical_bias="0.750" />
+        app:layout_constraintVertical_bias="0.822" />
+
+    <TextView
+        android:id="@+id/textView11"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Welcome, "
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_login"
+        app:layout_constraintEnd_toEndOf="@+id/view_login"
+        app:layout_constraintHorizontal_bias="0.179"
+        app:layout_constraintStart_toStartOf="@+id/view_login"
+        app:layout_constraintTop_toTopOf="@+id/view_login"
+        app:layout_constraintVertical_bias="0.467" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In !"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_login"
+        app:layout_constraintEnd_toEndOf="@+id/view_login"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="@+id/view_login"
+        app:layout_constraintTop_toTopOf="@+id/view_login"
+        app:layout_constraintVertical_bias="0.505" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

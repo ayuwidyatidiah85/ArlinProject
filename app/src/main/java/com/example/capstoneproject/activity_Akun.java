@@ -11,6 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,7 +26,7 @@ public class activity_Akun extends AppCompatActivity {
 
     // deklarasi xml component
     private Button btn_save;
-    private ImageButton btn_back ;
+    private ImageView btn_back ;
     private TextInputLayout textinput_namauser, textinput_password ;
     private AutoCompleteTextView auto_lokasi, auto_golongan;
     private TextView textview_namauser, textview_username ;

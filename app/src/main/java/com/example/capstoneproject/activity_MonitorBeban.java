@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -27,7 +28,7 @@ public class activity_MonitorBeban extends AppCompatActivity {
 
     private TextView textview_nama, textview_daya, textview_jam, textview_biaya, textview_harga, textview_kwh ;
     private Switch switch_beban ;
-    private ImageButton btn_back ;
+    private ImageView btn_back ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,10 +59,10 @@ public class activity_MonitorBeban extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
 
-                String read_nama = snapshot.child(dataNow).child(bebanNow).child("nama").getValue(String.class) ;
+                String read_nama = snapshot.child(bebanNow).child("nama").getValue(String.class) ;
                 textview_nama.setText(read_nama);
                 Long read_daya = snapshot.child(bebanNow).child(dataNow).child("daya").getValue(Long.class) ;
-                textview_daya.setText(read_daya.toString());
+                textview_daya.setText(read_daya.toString() + " Watt");
 
                 // Hitung Jam Aktif beban
                 Long read_jam = snapshot.child(bebanNow).child(dataNow).child("time").getValue(Long.class) ;

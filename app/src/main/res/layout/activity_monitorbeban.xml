@@ -10,38 +10,27 @@
         android:id="@+id/view_monitor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/bg_monitorbeban"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
-        android:id="@+id/textview_biaya"
+        android:id="@+id/textview_jam"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Rp10.000"
+        android:text="1 Jam 20 Menit 59 Detik"
         android:textAlignment="textEnd"
         android:textSize="16sp"
-        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.9"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
         app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.627" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Tarif per kWh"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.118"
-        app:layout_constraintStart_toStartOf="@+id/view_monitor"
-        app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintVertical_bias="0.654" />
 
     <TextView
         android:id="@+id/textview_harga"
@@ -53,24 +42,26 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
         app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.58" />
+        app:layout_constraintVertical_bias="0.734" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="100dp"
+        android:id="@+id/textview_biaya"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:text="Biaya"
+        android:text="Rp10.000"
+        android:textAlignment="textEnd"
+        android:textColor="@color/black"
         android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.118"
+        app:layout_constraintHorizontal_bias="0.867"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
         app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.627" />
+        app:layout_constraintVertical_bias="0.781" />
 
     <TextView
         android:id="@+id/textview_kwh"
@@ -81,89 +72,40 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.895"
+        app:layout_constraintHorizontal_bias="0.862"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
         app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.540" />
-
-    <TextView
-        android:id="@+id/textview_jam"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:text="1 Jam 20 Menit 59 Detik"
-        android:textAlignment="textEnd"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.9"
-        app:layout_constraintStart_toStartOf="@+id/view_monitor"
-        app:layout_constraintTop_toTopOf="@+id/view_monitor" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:text="Total Daya"
-        android:textSize="16sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.120"
-        app:layout_constraintStart_toStartOf="@+id/view_monitor"
-        app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.540" />
-
-    <TextView
-        android:id="@+id/textview_nama"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Kipas Angin"
-        android:textSize="26sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/view_monitor"
-        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintStart_toStartOf="@+id/view_monitor"
-        app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.150
-" />
+        app:layout_constraintVertical_bias="0.693" />
 
     <TextView
         android:id="@+id/textview_daya"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="0"
-        android:textSize="60sp"
+        android:text="30 Watt"
+        android:textColor="@color/white"
+        android:textSize="50sp"
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view_monitor"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.757"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
-        app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.228" />
-
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="watt"
-        android:textSize="24sp"
-        app:layout_constraintBottom_toBottomOf="@+id/view_monitor"
-        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintStart_toStartOf="@+id/view_monitor"
-        app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.320
-
-" />
+        app:layout_constraintTop_toTopOf="@+id/view_monitor" />
 
     <Switch
         android:id="@+id/switch_beban"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:text="Power"
-        android:textSize="14sp"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view_monitor"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
         app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.380" />
+        app:layout_constraintVertical_bias="0.338" />
 
     <TextView
         android:id="@+id/textView"
@@ -173,20 +115,103 @@
         android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
-        app:layout_constraintHorizontal_bias="0.141"
+        app:layout_constraintHorizontal_bias="0.154"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
-        app:layout_constraintTop_toTopOf="@+id/view_monitor" />
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.654" />
 
-    <ImageButton
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Tarif per kWh"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="@+id/view_monitor"
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.734" />
+
+    <TextView
+        android:id="@+id/textView9"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Biaya"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="@+id/view_monitor"
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.781" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Total Daya"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.131"
+        app:layout_constraintStart_toStartOf="@+id/view_monitor"
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.693" />
+
+    <ImageView
         android:id="@+id/btn_back"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/ic_baseline_arrow_back_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/view_monitor"
         app:layout_constraintHorizontal_bias="0.05"
         app:layout_constraintStart_toStartOf="@+id/view_monitor"
         app:layout_constraintTop_toTopOf="@+id/view_monitor"
-        app:layout_constraintVertical_bias="0.03"
-        app:srcCompat="@drawable/ic_baseline_arrow_back_24" />
+        app:layout_constraintVertical_bias="0.03" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:text="Daya"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_monitor"
+        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintStart_toStartOf="@+id/view_monitor"
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.443" />
+
+    <TextView
+        android:id="@+id/textview_nama"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kipas Angin"
+        android:textColor="@color/white"
+        android:textAllCaps="true"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_monitor"
+        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintStart_toStartOf="@+id/view_monitor"
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.259" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="67dp"
+        android:layout_height="70dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_monitor"
+        app:layout_constraintEnd_toEndOf="@+id/view_monitor"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="@+id/view_monitor"
+        app:layout_constraintTop_toTopOf="@+id/view_monitor"
+        app:layout_constraintVertical_bias="0.479"
+        app:srcCompat="@drawable/ic_electric_monitorbeban" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
