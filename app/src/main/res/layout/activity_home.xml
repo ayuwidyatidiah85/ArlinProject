@@ -140,7 +140,7 @@
         app:layout_constraintEnd_toEndOf="@+id/view_home"
         app:layout_constraintStart_toStartOf="@+id/view_home"
         app:layout_constraintTop_toTopOf="@+id/view_home"
-        app:layout_constraintVertical_bias="0.307" />
+        app:layout_constraintVertical_bias="0.304" />
 
     <TextView
         android:id="@+id/textView7"
@@ -301,7 +301,7 @@
         app:layout_constraintStart_toStartOf="@+id/view_home"
         app:layout_constraintTop_toTopOf="@+id/view_home"
         app:layout_constraintVertical_bias="0.165"
-        app:srcCompat="@drawable/ic_baseline_account_circle_24" />
+        app:srcCompat="@drawable/ic_account" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

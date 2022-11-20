@@ -129,16 +129,16 @@ public class activity_Home extends AppCompatActivity{
                 textview_username.setText("@" + read_username);
 
                 // read dan show daya beban 1-4
-                Long read_daya1 = snapshot.child("beban1").child(dataNow).child("daya").getValue(Long.class) ;
-                Long read_daya2 = snapshot.child("beban2").child(dataNow).child("daya").getValue(Long.class) ;
-                Long read_daya3 = snapshot.child("beban3").child(dataNow).child("daya").getValue(Long.class) ;
-                Long read_daya4 = snapshot.child("beban4").child(dataNow).child("daya").getValue(Long.class) ;
-                Long read_totaldaya = read_daya1 + read_daya2 + read_daya3 + read_daya4 ; // sum daya 1-4
-                textview_daya1.setText(read_daya1.toString() + " Watt");
-                textview_daya2.setText(read_daya2.toString() + " Watt");
-                textview_daya3.setText(read_daya3.toString() + " Watt");
-                textview_daya4.setText(read_daya4.toString() + " Watt");
-                textview_totaldaya.setText(read_totaldaya.toString());
+                float read_daya1 = snapshot.child("beban1").child(dataNow).child("daya").getValue(float.class) ;
+                float read_daya2 = snapshot.child("beban2").child(dataNow).child("daya").getValue(float.class) ;
+                float read_daya3 = snapshot.child("beban3").child(dataNow).child("daya").getValue(float.class) ;
+                float read_daya4 = snapshot.child("beban4").child(dataNow).child("daya").getValue(float.class) ;
+                float read_totaldaya = read_daya1 + read_daya2 + read_daya3 + read_daya4 ; // sum daya 1-4
+                textview_daya1.setText(String.valueOf(read_daya1) + " Watt");
+                textview_daya2.setText(String.valueOf(read_daya2) + " Watt");
+                textview_daya3.setText(String.valueOf(read_daya3) + " Watt");
+                textview_daya4.setText(String.valueOf(read_daya4) + " Watt");
+                textview_totaldaya.setText(String.valueOf(read_totaldaya));
 
                 // read dan show nama beban 1-4
                 String read_nama1 = snapshot.child("beban1").child("nama").getValue(String.class) ;

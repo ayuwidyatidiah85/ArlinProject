@@ -32,6 +32,7 @@ public class activity_Monitor1 extends AppCompatActivity {
     private TextView textview_kWh1, textview_kWh2, textview_kWh3, textview_kWh4, textview_totalkWh ;
     private TextView textview_lokasi, textview_golongan ;
     private TextView textview_harga, textview_ppn, textview_ppj, textview_ppjrupiah, textview_biaya ;
+    float read_daya_fixed = 0 ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -85,8 +86,8 @@ public class activity_Monitor1 extends AppCompatActivity {
                 textview_kWh3.setText(showkWh(dataNow,"beban3",snapshot));
                 textview_kWh4.setText(showkWh(dataNow,"beban4",snapshot));
                 float total_kWh = showTotalkWh(dataNow, snapshot) ;
-                textview_totalkWh.setText(toDecimalkWh(total_kWh, "#.####") + " kWh");
-                textview_totaldaya.setText(toDecimalkWh(total_kWh, "#.##" + " kWh"));
+                textview_totalkWh.setText(toDecimalkWh(total_kWh, "#.#####") + " kWh");
+                textview_totaldaya.setText(toDecimalkWh(total_kWh, "#.##") + " kWh");
 
                 textview_lokasi.setText(lokasiNow);
                 textview_golongan.setText(golonganNow);
@@ -156,19 +157,31 @@ public class activity_Monitor1 extends AppCompatActivity {
     }
 
     public String showkWh(String dataNow, String beban , DataSnapshot snapshot) {
-        Long read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(Long.class) ;
+        float read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(float.class) ;
         Long read_jam = snapshot.child(beban).child(dataNow).child("time").getValue(Long.class) ;
         float time = read_jam/ (float)3600;
-        float kWh = read_daya/ (float)1000 * time;
-        String text = toDecimalkWh(kWh, "#.####")+ " kWh";
+
+        // error handling saat daya = 0 dan biaya = 0
+        if (read_daya != 0) {
+            read_daya_fixed = read_daya ;
+        }
+
+        float kWh = read_daya_fixed/ (float)1000 * time;
+        String text = toDecimalkWh(kWh, "#.#####")+ " kWh";
         return text;
     }
 
     public Float hitungkWh(String dataNow, String beban , DataSnapshot snapshot) {
-        Long read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(Long.class) ;
+        float read_daya = snapshot.child(beban).child(dataNow).child("daya").getValue(float.class) ;
         Long read_jam = snapshot.child(beban).child(dataNow).child("time").getValue(Long.class) ;
         float time = read_jam/ (float)3600;
-        float kWh = read_daya / (float)1000 * time;
+
+        // error handling saat daya = 0 dan biaya = 0
+        if (read_daya != 0) {
+            read_daya_fixed = read_daya ;
+        }
+
+        float kWh = read_daya_fixed / (float)1000 * time;
         return kWh;
     }
     public float showTotalkWh(String dataNow, DataSnapshot snapshot) {

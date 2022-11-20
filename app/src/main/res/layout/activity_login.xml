@@ -31,7 +31,7 @@
         app:helperTextTextColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
-        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/view_login"
         app:layout_constraintTop_toTopOf="@+id/view_login"
         app:layout_constraintVertical_bias="0.601">
@@ -57,7 +57,7 @@
         app:helperTextTextColor="@color/yellow"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
-        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/view_login"
         app:layout_constraintTop_toTopOf="@+id/view_login"
         app:layout_constraintVertical_bias="0.729">
@@ -80,10 +80,24 @@
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
-        app:layout_constraintHorizontal_bias="0.832"
+        app:layout_constraintHorizontal_bias="0.829"
         app:layout_constraintStart_toStartOf="@+id/view_login"
         app:layout_constraintTop_toTopOf="@+id/view_login"
-        app:layout_constraintVertical_bias="0.822" />
+        app:layout_constraintVertical_bias="0.837" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Log In !"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_login"
+        app:layout_constraintEnd_toEndOf="@+id/view_login"
+        app:layout_constraintHorizontal_bias="0.165"
+        app:layout_constraintStart_toStartOf="@+id/view_login"
+        app:layout_constraintTop_toTopOf="@+id/view_login" />
 
     <TextView
         android:id="@+id/textView11"
@@ -98,21 +112,30 @@
         app:layout_constraintHorizontal_bias="0.179"
         app:layout_constraintStart_toStartOf="@+id/view_login"
         app:layout_constraintTop_toTopOf="@+id/view_login"
-        app:layout_constraintVertical_bias="0.467" />
+        app:layout_constraintVertical_bias="0.461" />
 
-    <TextView
-        android:id="@+id/textView12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Log In !"
-        android:textColor="@color/white"
-        android:textSize="20sp"
-        android:textStyle="bold"
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="151dp"
+        android:layout_height="149dp"
         app:layout_constraintBottom_toBottomOf="@+id/view_login"
         app:layout_constraintEnd_toEndOf="@+id/view_login"
-        app:layout_constraintHorizontal_bias="0.165"
         app:layout_constraintStart_toStartOf="@+id/view_login"
         app:layout_constraintTop_toTopOf="@+id/view_login"
-        app:layout_constraintVertical_bias="0.505" />
+        app:layout_constraintVertical_bias="0.127"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <TextView
+        android:id="@+id/textView13"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Aplikasi Ramah Listrik Indekos"
+        android:textColor="@color/grey"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_login"
+        app:layout_constraintEnd_toEndOf="@+id/view_login"
+        app:layout_constraintStart_toStartOf="@+id/view_login"
+        app:layout_constraintTop_toTopOf="@+id/view_login"
+        app:layout_constraintVertical_bias="0.370" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
