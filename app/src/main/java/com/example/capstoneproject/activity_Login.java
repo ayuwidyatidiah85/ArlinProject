@@ -103,6 +103,7 @@ public class activity_Login extends AppCompatActivity {
                         home.putExtra("golonganNow",golonganFromDB) ;
                         finish() ;
                         startActivity(home);
+
                     } else {
                         textinput_password.setError("Wrong Password");
                         textinput_password.requestFocus();

@@ -126,6 +126,22 @@ public class activity_Home extends AppCompatActivity{
                     textview_orang.setText("OUT");
                 }
 
+                // btn_state change
+                textview_orang.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        if (adaorang == true) {
+                            Intent homesensor = new Intent(getApplicationContext(), activity_HomeSensor1.class);
+                            homesensor.putExtra("userNow",userNow) ;
+                            startActivity(homesensor);
+                        } else {
+                            Intent homesensor = new Intent(getApplicationContext(), activity_HomeSensor2.class);
+                            homesensor.putExtra("userNow",userNow) ;
+                            startActivity(homesensor);
+                        }
+                    }
+                });
+
 
                 // read dan show namauser dan username
                 String read_namauser = snapshot.child("nama").getValue(String.class) ;
