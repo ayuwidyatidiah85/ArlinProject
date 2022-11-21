@@ -101,9 +101,9 @@ public class activity_Akun extends AppCompatActivity {
                     public void onClick(View view) {
                         data.child("nama").setValue(textinput_namauser.getEditText().getText().toString()) ;
                         data.child("password").setValue(textinput_password.getEditText().getText().toString()) ;
-                        data.child("location").setValue(auto_lokasi.getText().toString()) ;
-                        data.child("golongan").setValue(auto_golongan.getText().toString()) ;
-                        Toast.makeText(activity_Akun.this, "Data has been updated", Toast.LENGTH_LONG).show();
+                        //data.child("location").setValue(auto_lokasi.getText().toString()) ;
+                        //data.child("golongan").setValue(auto_golongan.getText().toString()) ;
+                        Toast.makeText(activity_Akun.this, "Name and Password has been updated", Toast.LENGTH_LONG).show();
                     }
                 });
 

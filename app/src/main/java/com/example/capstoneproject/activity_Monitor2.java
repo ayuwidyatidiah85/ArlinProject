@@ -94,7 +94,10 @@ public class activity_Monitor2 extends AppCompatActivity {
                 textview_harga.setText(toRupiah(hargaNow));
                 textview_ppn.setText(toRupiah(ppnNow));
                 textview_ppj.setText(String.valueOf(ppjNow) + "%");
-                float biaya_bersih = total_kWh * hargaNow ;
+
+                // Hitung total biaya
+                //float biaya_bersih = total_kWh * hargaNow ;
+                float biaya_bersih = showTotalbiaya(dataNow, snapshot) ;
                 float ppjRupiah = ppjNow * biaya_bersih ;
                 float biaya_kotor = biaya_bersih + ppjRupiah ;
                 textview_ppjrupiah.setText(toRupiah(ppjRupiah));
@@ -188,6 +191,15 @@ public class activity_Monitor2 extends AppCompatActivity {
         float read_kWh3 = hitungkWh(dataNow,"beban3", snapshot) ;
         float read_kWh4 = hitungkWh(dataNow,"beban4", snapshot) ;
         float kWh = read_kWh1 + read_kWh2 + read_kWh3 + read_kWh4 ;
+        return kWh;
+    }
+
+    public float showTotalbiaya(String dataNow, DataSnapshot snapshot) {
+        float read_biaya1 = snapshot.child("beban1").child(dataNow).child("biaya").getValue(float.class) ;
+        float read_biaya2 = snapshot.child("beban2").child(dataNow).child("biaya").getValue(float.class) ;
+        float read_biaya3 = snapshot.child("beban3").child(dataNow).child("biaya").getValue(float.class) ;
+        float read_biaya4 = snapshot.child("beban4").child(dataNow).child("biaya").getValue(float.class) ;
+        float kWh = read_biaya1 + read_biaya2 + read_biaya3 + read_biaya4 ;
         return kWh;
     }
 

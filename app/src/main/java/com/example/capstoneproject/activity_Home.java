@@ -4,7 +4,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -20,6 +19,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+
+import java.text.DecimalFormat;
 
 public class activity_Home extends AppCompatActivity{
 
@@ -46,7 +47,8 @@ public class activity_Home extends AppCompatActivity{
         String golonganNow = home.getStringExtra("golonganNow") ;
 
         // deklarasi intent tujuan yang dipakai
-        Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
+        Intent monitorBeban1 = new Intent(getApplicationContext(), activity_MonitorBeban1.class);
+        Intent monitorBeban2 = new Intent(getApplicationContext(), activity_MonitorBeban2.class);
         Intent monitor1 = new Intent(getApplicationContext(), activity_Monitor1.class);
         Intent monitor2 = new Intent(getApplicationContext(), activity_Monitor2.class);
         Intent akun = new Intent(getApplicationContext(), activity_Akun.class) ;
@@ -64,8 +66,9 @@ public class activity_Home extends AppCompatActivity{
                 Long ppn = snapshot.child(lokasiNow).child("PPN").getValue(Long.class);
                 float ppnNow = (float) ppn ;
 
-                // Intent utk acitivity MonitorBeban
-                monitorBeban.putExtra("hargaNow", hargaNow) ;
+                // Intent utk acitivity MonitorBeban1 dan MonitorBeban2
+                monitorBeban1.putExtra("hargaNow", hargaNow) ;
+                monitorBeban2.putExtra("hargaNow", hargaNow) ;
 
                 // Intent utk acitivity Monitor1
                 monitor1.putExtra("hargaNow", hargaNow) ;
@@ -138,7 +141,9 @@ public class activity_Home extends AppCompatActivity{
                 textview_daya2.setText(String.valueOf(read_daya2) + " Watt");
                 textview_daya3.setText(String.valueOf(read_daya3) + " Watt");
                 textview_daya4.setText(String.valueOf(read_daya4) + " Watt");
-                textview_totaldaya.setText(String.valueOf(read_totaldaya));
+                DecimalFormat df = new DecimalFormat("#.##");
+                String totaldaya = df.format(read_totaldaya);
+                textview_totaldaya.setText(String.valueOf(totaldaya));
 
                 // read dan show nama beban 1-4
                 String read_nama1 = snapshot.child("beban1").child("nama").getValue(String.class) ;
@@ -166,52 +171,84 @@ public class activity_Home extends AppCompatActivity{
                     @Override
                     public void onClick(View view) {
                         String bebanNow = "beban1" ;
-                        //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
-                        monitorBeban.putExtra("bebanNow",bebanNow) ;
-                        monitorBeban.putExtra("userNow", userNow);
-                        monitorBeban.putExtra("dataNow", dataNow) ;
-                        monitorBeban.putExtra("golonganNow", golonganNow) ;
-                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
-                        startActivity(monitorBeban);
+                        if (dataNow == "data1") {
+                            monitorBeban1.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban1.putExtra("userNow", userNow);
+                            monitorBeban1.putExtra("dataNow", dataNow) ;
+                            monitorBeban1.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban1);
+                        } else {
+                            monitorBeban2.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban2.putExtra("userNow", userNow);
+                            monitorBeban2.putExtra("dataNow", dataNow) ;
+                            monitorBeban2.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban2);
+                        }
                     }
                 });
                 textview_nama2.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String bebanNow = "beban2" ;
-                        //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
-                        monitorBeban.putExtra("bebanNow",bebanNow) ;
-                        monitorBeban.putExtra("userNow", userNow);
-                        monitorBeban.putExtra("dataNow", dataNow) ;
-                        monitorBeban.putExtra("golonganNow", golonganNow) ;
-                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
-                        startActivity(monitorBeban);
+                        if (dataNow == "data1") {
+                            monitorBeban1.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban1.putExtra("userNow", userNow);
+                            monitorBeban1.putExtra("dataNow", dataNow) ;
+                            monitorBeban1.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban1);
+                        } else {
+                            monitorBeban2.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban2.putExtra("userNow", userNow);
+                            monitorBeban2.putExtra("dataNow", dataNow) ;
+                            monitorBeban2.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban2);
+                        }
                     }
                 });
                 textview_nama3.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String bebanNow = "beban3" ;
-                        //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
-                        monitorBeban.putExtra("bebanNow",bebanNow) ;
-                        monitorBeban.putExtra("userNow", userNow);
-                        monitorBeban.putExtra("dataNow", dataNow) ;
-                        monitorBeban.putExtra("golonganNow", golonganNow) ;
-                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
-                        startActivity(monitorBeban);
+                        if (dataNow == "data1") {
+                            monitorBeban1.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban1.putExtra("userNow", userNow);
+                            monitorBeban1.putExtra("dataNow", dataNow) ;
+                            monitorBeban1.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban1);
+                        } else {
+                            monitorBeban2.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban2.putExtra("userNow", userNow);
+                            monitorBeban2.putExtra("dataNow", dataNow) ;
+                            monitorBeban2.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban2);
+                        }
                     }
                 });
                 textview_nama4.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
                         String bebanNow = "beban4" ;
-                        //Intent monitorBeban = new Intent(getApplicationContext(), activity_MonitorBeban.class);
-                        monitorBeban.putExtra("bebanNow",bebanNow) ;
-                        monitorBeban.putExtra("userNow", userNow);
-                        monitorBeban.putExtra("dataNow", dataNow) ;
-                        monitorBeban.putExtra("golonganNow", golonganNow) ;
-                        monitorBeban.putExtra("lokasiNow", lokasiNow) ;
-                        startActivity(monitorBeban);
+                        if (dataNow == "data1") {
+                            monitorBeban1.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban1.putExtra("userNow", userNow);
+                            monitorBeban1.putExtra("dataNow", dataNow) ;
+                            monitorBeban1.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban1);
+                        } else {
+                            monitorBeban2.putExtra("bebanNow",bebanNow) ;
+                            monitorBeban2.putExtra("userNow", userNow);
+                            monitorBeban2.putExtra("dataNow", dataNow) ;
+                            monitorBeban2.putExtra("golonganNow", golonganNow) ;
+                            monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            startActivity(monitorBeban2);
+                        }
                     }
                 });
 

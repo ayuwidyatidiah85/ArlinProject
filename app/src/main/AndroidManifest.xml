@@ -55,7 +55,14 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity_MonitorBeban"
+            android:name=".activity_MonitorBeban1"
+            android:exported="false" >
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".activity_MonitorBeban2"
             android:exported="false" >
             <meta-data
                 android:name="android.app.lib_name"
