@@ -107,7 +107,7 @@
         android:id="@+id/btn_change"
         android:layout_width="180dp"
         android:layout_height="100dp"
-        android:text="User di Dalam Indekos"
+        android:text="User di luar Indekos"
         android:backgroundTint="@color/red"
         android:textColor="@color/white"
         android:textStyle="bold"

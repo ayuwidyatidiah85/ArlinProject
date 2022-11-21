@@ -39,7 +39,7 @@ public class activity_HomeSensor2 extends AppCompatActivity {
         String userNow = login.getStringExtra("userNow");
 
         // deklarasi intent tujuan yang dipakai
-        Intent homesensor = new Intent(getApplicationContext(), activity_HomeSensor2.class);
+        Intent homesensor = new Intent(getApplicationContext(), activity_HomeSensor1.class);
         homesensor.putExtra("userNow",userNow) ;
 
         // Realtime baca data root : user
@@ -76,9 +76,10 @@ public class activity_HomeSensor2 extends AppCompatActivity {
                 btn_change.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-
+                        data.child("adaorang").setValue(true) ;
                         finish();
                         startActivity(homesensor);
+                        overridePendingTransition(0, 0);
                     }
                 });
 

@@ -76,8 +76,10 @@ public class activity_HomeSensor1 extends AppCompatActivity{
                 btn_change.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
+                        data.child("adaorang").setValue(false) ;
                         finish();
                         startActivity(homesensor);
+                        overridePendingTransition(0, 0);
                     }
                 });
 
