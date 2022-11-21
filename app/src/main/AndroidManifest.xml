@@ -34,13 +34,6 @@
                 android:value="" />
         </activity>
         <activity
-            android:name=".activity_SignUp"
-            android:exported="false" >
-            <meta-data
-                android:name="android.app.lib_name"
-                android:value="" />
-        </activity>
-        <activity
             android:name=".activity_Monitor1"
             android:exported="false" >
             <meta-data

@@ -110,6 +110,7 @@ public class activity_MonitorBeban1 extends AppCompatActivity {
                         home_bar.putExtra("userNow",userNow) ;
                         home_bar.putExtra("lokasiNow",lokasiNow) ;
                         home_bar.putExtra("golonganNow",golonganNow) ;
+                        finish();
                         startActivity(home_bar);
                         overridePendingTransition(0,0);
                     }
@@ -127,6 +128,7 @@ public class activity_MonitorBeban1 extends AppCompatActivity {
                         pemborosan_bar.putExtra("dataNow", dataNow) ;
                         pemborosan_bar.putExtra("golonganNow", golonganNow) ;
                         pemborosan_bar.putExtra("lokasiNow", lokasiNow) ;
+                        finish();
                         startActivity(pemborosan_bar);
                         overridePendingTransition(0,0);
                     }
@@ -209,11 +211,12 @@ public class activity_MonitorBeban1 extends AppCompatActivity {
     {
         AlertDialog myQuittingDialogBox = new AlertDialog.Builder(this)
                 // set message, title, and icon
-                .setTitle("Delete")
-                .setMessage("Do you want to Delete")
+                .setTitle("Reset Data")
+                .setMessage("Do you want to Reset data?")
+                .setMessage("Daya, Time, and Biaya in Efisiensi State will start again from 0")
                 // .setIcon(R.drawable.delete)
 
-                .setPositiveButton("Delete", new DialogInterface.OnClickListener() {
+                .setPositiveButton("reset", new DialogInterface.OnClickListener() {
 
                     public void onClick(DialogInterface dialog, int whichButton) {
                         //your deleting code

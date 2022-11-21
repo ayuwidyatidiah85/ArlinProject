@@ -101,7 +101,7 @@ public class activity_Login extends AppCompatActivity {
                         home.putExtra("userNow",usernameFromDB) ;
                         home.putExtra("lokasiNow",lokasiFromDB) ;
                         home.putExtra("golonganNow",golonganFromDB) ;
-
+                        finish() ;
                         startActivity(home);
                     } else {
                         textinput_password.setError("Wrong Password");

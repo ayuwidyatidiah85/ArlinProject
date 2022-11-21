@@ -1,5 +1,6 @@
 package com.example.capstoneproject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.database.DataSnapshot;
@@ -108,6 +110,7 @@ public class activity_MonitorBeban2 extends AppCompatActivity {
                         home_bar.putExtra("userNow",userNow) ;
                         home_bar.putExtra("lokasiNow",lokasiNow) ;
                         home_bar.putExtra("golonganNow",golonganNow) ;
+                        finish();
                         startActivity(home_bar);
                         overridePendingTransition(0,0);
                     }
@@ -125,6 +128,7 @@ public class activity_MonitorBeban2 extends AppCompatActivity {
                         efisiensi_bar.putExtra("dataNow", dataNow) ;
                         efisiensi_bar.putExtra("golonganNow", golonganNow) ;
                         efisiensi_bar.putExtra("lokasiNow", lokasiNow) ;
+                        finish();
                         startActivity(efisiensi_bar);
                         overridePendingTransition(0,0);
                     }
@@ -134,10 +138,8 @@ public class activity_MonitorBeban2 extends AppCompatActivity {
                 btn_reset.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
-                        data.child(bebanNow).child(dataNow).child("time").setValue(0) ;
-                        data.child(bebanNow).child(dataNow).child("daya").setValue(0) ;
-                        data.child(bebanNow).child(dataNow).child("biaya").setValue(0) ;
-                        Toast.makeText(activity_MonitorBeban2.this, "Data has been reset", Toast.LENGTH_LONG).show();
+                        AlertDialog diaBox = AskOption(data, bebanNow, dataNow);
+                        diaBox.show();
                     }
                 });
             }
@@ -205,5 +207,37 @@ public class activity_MonitorBeban2 extends AppCompatActivity {
         return rupiah_text ;
     }
 
+    private AlertDialog AskOption(DatabaseReference data, String bebanNow, String dataNow)
+    {
+        AlertDialog myQuittingDialogBox = new AlertDialog.Builder(this)
+                // set message, title, and icon
+                .setTitle("Reset Data")
+                .setMessage("Do you want to Reset data?")
+                .setMessage("Daya, Time, and Biaya in Pemborosan State will start again from 0")
+                // .setIcon(R.drawable.delete)
+
+                .setPositiveButton("reset", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        //your deleting code
+                        data.child(bebanNow).child(dataNow).child("time").setValue(0) ;
+                        data.child(bebanNow).child(dataNow).child("daya").setValue(0) ;
+                        data.child(bebanNow).child(dataNow).child("biaya").setValue(0) ;
+                        Toast.makeText(activity_MonitorBeban2.this, "Data has been reset", Toast.LENGTH_LONG).show();
+                        dialog.dismiss();
+                    }
+
+                })
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+
+                    }
+                })
+                .create();
+
+        return myQuittingDialogBox;
+    }
 
 }

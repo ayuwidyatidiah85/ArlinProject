@@ -1,8 +1,10 @@
 package com.example.capstoneproject;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -26,7 +28,7 @@ public class activity_Akun extends AppCompatActivity {
 
     // deklarasi xml component
     private Button btn_save;
-    private ImageView btn_back ;
+    private ImageView btn_back, btn_logout ;
     private TextInputLayout textinput_namauser, textinput_password ;
     private AutoCompleteTextView auto_lokasi, auto_golongan;
     private TextView textview_namauser, textview_username ;
@@ -42,6 +44,7 @@ public class activity_Akun extends AppCompatActivity {
 
         btn_save = findViewById(R.id.btn_save) ;
         btn_back = findViewById(R.id.btn_back) ;
+        btn_logout = findViewById(R.id.btn_logout) ;
         textview_namauser = findViewById(R.id.textview_namauser) ;
         textview_username = findViewById(R.id.textview_username) ;
         textinput_namauser = findViewById(R.id.textinput_namauser) ;
@@ -107,6 +110,15 @@ public class activity_Akun extends AppCompatActivity {
                     }
                 });
 
+                // button logout
+                btn_logout.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        AlertDialog diaBox = AskOption();
+                        diaBox.show();
+                    }
+                });
+
                 // button back
                 btn_back.setOnClickListener(new View.OnClickListener() {
                     @Override
@@ -115,10 +127,12 @@ public class activity_Akun extends AppCompatActivity {
                         home_bar.putExtra("userNow",userNow) ;
                         home_bar.putExtra("lokasiNow",lokasiNow) ;
                         home_bar.putExtra("golonganNow",golonganNow) ;
+                        finish();
                         startActivity(home_bar);
                         overridePendingTransition(0,0);
                     }
                 });
+
             }
 
             @Override
@@ -128,6 +142,38 @@ public class activity_Akun extends AppCompatActivity {
         }) ;
 
 
+    }
+
+    private AlertDialog AskOption()
+    {
+        AlertDialog myQuittingDialogBox = new AlertDialog.Builder(this)
+                // set message, title, and icon
+                .setTitle("Log Out")
+                .setMessage("Do you want to Log Out?")
+                // .setIcon(R.drawable.delete)
+
+                .setPositiveButton("logout", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int whichButton) {
+                        //your deleting code
+                        Intent logout = new Intent(getApplicationContext(), activity_Login.class);
+                        logout.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                        startActivity(logout);
+
+                        dialog.dismiss();
+                    }
+
+                })
+                .setNegativeButton("cancel", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+
+                        dialog.dismiss();
+
+                    }
+                })
+                .create();
+
+        return myQuittingDialogBox;
     }
 
 

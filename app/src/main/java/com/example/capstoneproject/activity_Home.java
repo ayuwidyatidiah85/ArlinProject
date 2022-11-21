@@ -1,5 +1,6 @@
 package com.example.capstoneproject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
@@ -9,6 +10,7 @@ import android.widget.Switch;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -155,6 +157,7 @@ public class activity_Home extends AppCompatActivity{
                 textview_nama3.setText(read_nama3);
                 textview_nama4.setText(read_nama4);
 
+                // btn_akun
                 image_akun.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View view) {
@@ -162,6 +165,7 @@ public class activity_Home extends AppCompatActivity{
                         akun.putExtra("userNow", userNow);
                         akun.putExtra("lokasiNow", lokasiNow) ;
                         akun.putExtra("golonganNow", golonganNow) ;
+                        //finish();
                         startActivity(akun);
                     }
                 });
@@ -177,6 +181,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban1.putExtra("dataNow", dataNow) ;
                             monitorBeban1.putExtra("golonganNow", golonganNow) ;
                             monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban1);
                         } else {
                             monitorBeban2.putExtra("bebanNow",bebanNow) ;
@@ -184,6 +189,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban2.putExtra("dataNow", dataNow) ;
                             monitorBeban2.putExtra("golonganNow", golonganNow) ;
                             monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban2);
                         }
                     }
@@ -198,6 +204,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban1.putExtra("dataNow", dataNow) ;
                             monitorBeban1.putExtra("golonganNow", golonganNow) ;
                             monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban1);
                         } else {
                             monitorBeban2.putExtra("bebanNow",bebanNow) ;
@@ -205,6 +212,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban2.putExtra("dataNow", dataNow) ;
                             monitorBeban2.putExtra("golonganNow", golonganNow) ;
                             monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban2);
                         }
                     }
@@ -219,6 +227,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban1.putExtra("dataNow", dataNow) ;
                             monitorBeban1.putExtra("golonganNow", golonganNow) ;
                             monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban1);
                         } else {
                             monitorBeban2.putExtra("bebanNow",bebanNow) ;
@@ -226,6 +235,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban2.putExtra("dataNow", dataNow) ;
                             monitorBeban2.putExtra("golonganNow", golonganNow) ;
                             monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban2);
                         }
                     }
@@ -240,6 +250,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban1.putExtra("dataNow", dataNow) ;
                             monitorBeban1.putExtra("golonganNow", golonganNow) ;
                             monitorBeban1.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban1);
                         } else {
                             monitorBeban2.putExtra("bebanNow",bebanNow) ;
@@ -247,6 +258,7 @@ public class activity_Home extends AppCompatActivity{
                             monitorBeban2.putExtra("dataNow", dataNow) ;
                             monitorBeban2.putExtra("golonganNow", golonganNow) ;
                             monitorBeban2.putExtra("lokasiNow", lokasiNow) ;
+                            //finish();
                             startActivity(monitorBeban2);
                         }
                     }
@@ -355,6 +367,7 @@ public class activity_Home extends AppCompatActivity{
                         monitor1.putExtra("dataNow", dataNow) ;
                         monitor1.putExtra("lokasiNow", lokasiNow) ;
                         monitor1.putExtra("golonganNow", golonganNow) ;
+                        finish();
                         startActivity(monitor1);
                         overridePendingTransition(0,0);
                         return true ;
@@ -365,6 +378,7 @@ public class activity_Home extends AppCompatActivity{
                         monitor2.putExtra("dataNow", dataNow) ;
                         monitor2.putExtra("lokasiNow", lokasiNow) ;
                         monitor2.putExtra("golonganNow", golonganNow) ;
+                        finish();
                         startActivity(monitor2);
                         overridePendingTransition(0,0);
                         return true ;
@@ -376,6 +390,22 @@ public class activity_Home extends AppCompatActivity{
 
     }
 
+    @Override
+    public void onBackPressed() {
 
+        new AlertDialog.Builder(this)
+                .setMessage("Are you sure you want to quit?")
+                .setCancelable(false)
+                .setPositiveButton("yes", new DialogInterface.OnClickListener() {
+
+                    public void onClick(DialogInterface dialog, int which) {
+                        //your quitting code
+                        finishAffinity();
+                    }
+
+                })
+                .setNegativeButton("no", null)
+                .show();
+    }
 }
 

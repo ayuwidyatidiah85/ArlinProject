@@ -126,6 +126,7 @@ public class activity_Monitor2 extends AppCompatActivity {
                         home_bar.putExtra("userNow",userNow) ;
                         home_bar.putExtra("lokasiNow",lokasiNow) ;
                         home_bar.putExtra("golonganNow",golonganNow) ;
+                        finish();
                         startActivity(home_bar);
                         overridePendingTransition(0,0);
                         return true ;
@@ -140,6 +141,7 @@ public class activity_Monitor2 extends AppCompatActivity {
                         monitor1_bar.putExtra("dataNow", dataNow) ;
                         monitor1_bar.putExtra("lokasiNow", lokasiNow) ;
                         monitor1_bar.putExtra("golonganNow", golonganNow) ;
+                        finish();
                         startActivity(monitor1_bar);
                         overridePendingTransition(0,0);
                         return true ;

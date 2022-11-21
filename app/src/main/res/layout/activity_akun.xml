@@ -164,4 +164,16 @@
         app:layout_constraintVertical_bias="0.130"
         app:srcCompat="@drawable/ic_account" />
 
+    <ImageView
+        android:id="@+id/btn_logout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/view_akun"
+        app:layout_constraintEnd_toEndOf="@+id/view_akun"
+        app:layout_constraintHorizontal_bias="0.886"
+        app:layout_constraintStart_toStartOf="@+id/view_akun"
+        app:layout_constraintTop_toTopOf="@+id/view_akun"
+        app:layout_constraintVertical_bias="0.079"
+        app:srcCompat="@drawable/ic_logout" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
