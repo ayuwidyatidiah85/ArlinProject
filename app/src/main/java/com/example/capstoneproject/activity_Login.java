@@ -94,15 +94,27 @@ public class activity_Login extends AppCompatActivity {
                         textinput_username.setErrorEnabled(false);
 
                         String usernameFromDB = snapshot.child(userEnteredUsername).child("username").getValue(String.class);
-                        String lokasiFromDB = snapshot.child(userEnteredUsername).child("location").getValue(String.class);
-                        String golonganFromDB = snapshot.child(userEnteredUsername).child("golongan").getValue(String.class);
+                        Boolean adaorangFromDB = snapshot.child(userEnteredUsername).child("adaorang").getValue(Boolean.class);
 
+                        /*
                         Intent home = new Intent(getApplicationContext(), activity_Home.class);
                         home.putExtra("userNow",usernameFromDB) ;
-                        home.putExtra("lokasiNow",lokasiFromDB) ;
-                        home.putExtra("golonganNow",golonganFromDB) ;
                         finish() ;
-                        startActivity(home);
+                        startActivity(home); */
+
+                        if (adaorangFromDB == Boolean.TRUE) {
+                            Intent homesensor = new Intent(getApplicationContext(), activity_HomeSensor1.class);
+                            homesensor.putExtra("userNow",usernameFromDB) ;
+                            finish() ;
+                            startActivity(homesensor);
+                        } else {
+                            Intent homesensor = new Intent(getApplicationContext(), activity_HomeSensor2.class);
+                            homesensor.putExtra("userNow",usernameFromDB) ;
+                            finish() ;
+                            startActivity(homesensor);
+                        }
+
+
                     } else {
                         textinput_password.setError("Wrong Password");
                         textinput_password.requestFocus();

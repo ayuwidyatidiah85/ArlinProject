@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activity_HomeSensor2">
+
+    <View
+        android:id="@+id/view_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_homesensor2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textview_nama9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Press for Change"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.653" />
+
+    <TextView
+        android:id="@+id/textview_orang"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="IN"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.446" />
+
+    <TextView
+        android:id="@+id/textview_nama5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.410"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.445" />
+
+    <TextView
+        android:id="@+id/textview_namauser"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Halo Budi Setiawan"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.163" />
+
+    <TextView
+        android:id="@+id/textview_username"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:text="Halo"
+        android:textColor="@color/blue"
+        android:textSize="16sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.826"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.194" />
+
+    <ImageView
+        android:id="@+id/image_akun"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintHorizontal_bias="0.160"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.165"
+        app:srcCompat="@drawable/ic_account" />
+
+    <Button
+        android:id="@+id/btn_change"
+        android:layout_width="180dp"
+        android:layout_height="100dp"
+        android:text="User di Dalam Indekos"
+        android:backgroundTint="@color/red"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view_home"
+        app:layout_constraintEnd_toEndOf="@+id/view_home"
+        app:layout_constraintStart_toStartOf="@+id/view_home"
+        app:layout_constraintTop_toTopOf="@+id/view_home"
+        app:layout_constraintVertical_bias="0.581" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
